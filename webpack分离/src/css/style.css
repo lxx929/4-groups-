@@ -1,0 +1,7 @@
+div{
+    width: 100px;
+    height: 400px;
+    border: 20px solid red;
+    background: url('./pic.png')
+    /* background: red */
+}

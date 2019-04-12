@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .node {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #f90;
+            background: #ccc;
+            border-radius: 50%;
+        }
+        
+        ul li {
+            list-style: none;
+            line-height: 40px;
+        }
+        
+        .active {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <p @click="checkAllFn"><i class="node" :class="{'active':checkedAll}"></i> <span>全选</span></p>
+        <ul>
+            <li v-for="(item,index) in list" @click="checkFn(index)"><i class="node" :class="{'active':item.ischecked}"></i><span>{{item.name}}</span></li>
+        </ul>
+    </div>
+</body>
+
+</html>

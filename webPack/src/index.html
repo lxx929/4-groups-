@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        list-style: none;
+    }
+    .node{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border:1px solid #ccc;
+        border-radius: 50%;
+    }
+    .active{
+        background: yellow;
+    }
+</style>
+<body>
+    <div id="app">
+        <p v-on:click="checkAllFn">
+            <i class="node" v-bind:class="{'active':checkAll}"></i>
+            <span>全选</span>
+        </p>
+        <ul>
+            <li v-for="(item,index) in fuirtList" v-on:click="checkFn(index)">
+                <i class="node" v-bind:class="{'active':item.ischeck}"></i>
+                <span>{{item.name}}</span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
